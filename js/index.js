@@ -38,9 +38,7 @@ window.onload = function(){
 		//画小鸟
 		bird.y += sheed;
 		sheed +=0.001;
-		img.onload = function(){
-			ctx.drawImage(niao,0,0,50,50,bird.x,bird.y,50,50);
-		}
+		ctx.drawImage(niao,0,0,50,50,bird.x,bird.y,50,50);
 		//画管道
 		for (var i = 0; i < guandao.length; i++) {
 			var z = guandao[i];
@@ -67,9 +65,10 @@ window.onload = function(){
 		};
 		//边界判断
 		if(bird.y >= 587){
+			ctx.drawImage(niao,0,0,50,50,167,587,50,50);
 			ctx.fillRect(167,587,bird.w,bird.h);
 		}else if(bird.y <= 0){
-			ctx.fillRect(167,0,bird.w,bird.h);
+			ctx.drawImage(niao,0,0,50,50,167,0,50,50);
 		}else{
 			r = window.requestAnimationFrame(draw);
 		}
@@ -80,9 +79,9 @@ window.onload = function(){
 	canvas.onclick = function(e){
 		ctx.clearRect(0,0,375,627);
 		bird.y -=40;
-		ctx.fillRect(bird.x,bird.y,bird.w,bird.h);
+		ctx.drawImage(niao,0,0,50,50,bird.x,bird.y,50,50);
 		if(bird.y <= 0){
-			ctx.fillRect(167,0,bird.w,bird.h);
+			ctx.drawImage(niao,0,0,50,50,167,0,50,50);
 		}
 	}
 	canvas.addEventListener('touchend',function(e){
@@ -98,10 +97,8 @@ window.onload = function(){
 		ch = document.documentElement.clientHeight;
 		if(cw <= 377){
 			canvas.style.width = cw + 'px';
-			canvas.style.height = ch + 'px';
 		}
 		if(cw > 377){
-			canvas.style.height = 627 + 'px';
 			canvas.style.width = 377 + 'px';
 		}
 	}
