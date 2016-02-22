@@ -94,10 +94,12 @@ window.onload = function(){
 	window.onresize = function(){
 		cw = document.documentElement.clientWidth;
 		ch = document.documentElement.clientHeight;
-		if(cw <= 377){
+		if(cw <= 607){
 			canvas.style.width = cw + 'px';
+			canvas.style.height = ch + 'px';
 		}
 		if(cw > 377){
+			canvas.style.height = 627 + 'px';
 			canvas.style.width = 377 + 'px';
 		}
 	}
