@@ -3,8 +3,8 @@ body{
     padding: 0;
 }
 .dbgimg{
-	width: 377px;
-	height: 629px;
+	width: 375px;
+	height: 627px;
 	overflow: hidden;
     background: url(../imgs/bg-sky.jpg);
     position: absolute;
@@ -12,8 +12,8 @@ body{
     top: 0;
 }
 .smallimg{
-    width: 377px;
-    height: 629px;
+    width: 375px;
+    height: 627px;
     overflow: hidden;
     background: url(../imgs/house.png) no-repeat 0px 450px;
     position: absolute;
@@ -26,4 +26,3 @@ body{
 	z-index: 999;
 	overflow: hidden;
 }
-
