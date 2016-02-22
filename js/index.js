@@ -38,7 +38,9 @@ window.onload = function(){
 		//画小鸟
 		bird.y += sheed;
 		sheed +=0.001;
-		ctx.drawImage(niao,0,0,50,50,bird.x,bird.y,50,50);
+		img.onload = function(){
+			ctx.drawImage(niao,0,0,50,50,bird.x,bird.y,50,50);
+		}
 		//画管道
 		for (var i = 0; i < guandao.length; i++) {
 			var z = guandao[i];
@@ -94,7 +96,7 @@ window.onload = function(){
 	window.onresize = function(){
 		cw = document.documentElement.clientWidth;
 		ch = document.documentElement.clientHeight;
-		if(cw <= 607){
+		if(cw <= 377){
 			canvas.style.width = cw + 'px';
 			canvas.style.height = ch + 'px';
 		}
