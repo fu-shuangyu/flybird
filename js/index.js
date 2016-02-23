@@ -90,16 +90,16 @@ window.onload = function(){
 	var cw = document.documentElement.clientWidth;
 	var ch = document.documentElement.clientHeight;
 	if(cw <= 377){
-		canvas.style.width = cw + 'px';
+		canvas.width = cw + 'px';
 	}
 	window.onresize = function(){
 		cw = document.documentElement.clientWidth;
 		ch = document.documentElement.clientHeight;
 		if(cw <= 377){
-			canvas.style.width = cw + 'px';
+			canvas.width = cw + 'px';
 		}
 		if(cw > 377){
-			canvas.style.width = 377 + 'px';
+			canvas.width = 377 + 'px';
 		}
 	}
 	
