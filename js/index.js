@@ -37,13 +37,25 @@ window.onload = function(){
 		ctx.clearRect(0,0,375,627);
 		//画小鸟
 		bird.y += sheed;
-		sheed +=0.001;
+		sheed +=0.003;
 		ctx.drawImage(niao,0,0,50,50,bird.x,bird.y,50,50);
 		//画管道
 		for (var i = 0; i < guandao.length; i++) {
 			var z = guandao[i];
 			z.top.x -=3;
 			z.bottom.x -=3;
+			var lingrad = ctx.createLinearGradient(z.top.x,z.top.y,z.top.w,z.top.h);
+			lingrad.addColorStop(0.1,'#01579b');
+			lingrad.addColorStop(0.2,'#0277bd');
+			lingrad.addColorStop(0.3,'#0288d1');
+			lingrad.addColorStop(0.4,'#039be5');
+			lingrad.addColorStop(0.5,'#03a9f4');
+			lingrad.addColorStop(0.6,'#039be5');
+			lingrad.addColorStop(0.7,'#0288d1');
+			lingrad.addColorStop(0.8,'#0277bd');
+			lingrad.addColorStop(0.9,'#01579b');
+			lingrad.addColorStop(1,'#0277bd');
+			ctx.fillStyle = lingrad;
 			ctx.fillRect(z.top.x,z.top.y,z.top.w,z.top.h);
 			ctx.fillRect(z.bottom.x,z.bottom.y,z.bottom.w,z.bottom.h);
 			if(z.top.x < (bird.x+bird.w)  && z.top.x > (bird.x - z.top.w) ){
@@ -52,16 +64,18 @@ window.onload = function(){
 				}
 			}
 			if( bird.y > H-bird.h || bird.y < 0 || vs ){
-			  return;
+			  alert('game over！');
+			  // location.reload();
 			}
 			if(z.top.x <= (-z.top.w)){
 				z.top.x = 475;
 				z.bottom.x = 475;
 
-				z.top.h = Math.random()*200+150;
-				z.bottom.y = z.top.h+150;
-				z.bottom.h = 627-z.top.h -150;
+				z.top.h = Math.random()*200+120;
+				z.bottom.y = z.top.h+120;
+				z.bottom.h = 627-z.top.h -120;
 			}
+
 		};
 		//边界判断
 		if(bird.y >= 587){

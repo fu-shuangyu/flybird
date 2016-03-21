@@ -26,3 +26,12 @@ body{
 	z-index: 999;
 	overflow: hidden;
 }
+
+.star {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 70px;
+    height: 50px;
+    line-height: 50px;
+}
